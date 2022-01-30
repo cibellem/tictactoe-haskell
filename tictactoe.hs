@@ -9,8 +9,7 @@ Done in the CLI - All input/output should be done in the terminal. Display every
 --Cibelle MVP
 -- When script starts users can choose to start or quit the game at any time
 -- A visual representation of the board is displayed in the CLI
--- 
-
+--
 
 -- Good practice to use type declaration with our functions
 -- doubleMe :: Int -> Int
@@ -19,7 +18,7 @@ Done in the CLI - All input/output should be done in the terminal. Display every
 -- defines interfaces and behaviours of our data
 type Turn = Int
 
-type Board = [Char]
+type Board = String
 
 type Option = Char
 
@@ -28,28 +27,33 @@ type Option = Char
 -- A new board is generated after the player picks a position on the board.
 runGame :: Board -> Turn -> IO ()
 runGame slots turn = do
-  putStrLn "Choose a number from"
-  print slots
-  putStrLn ("\n" ++ "" ++ (show (slots !! 0)) ++ "|" ++ (show (slots !! 1)) ++ "|" ++ (show (slots !! 2)) ++ "\n------------\n" ++ "" ++ (show (slots !! 3)) ++ "|" ++ (show (slots !! 4)) ++ "|" ++ (show (slots !! 5)) ++ "\n------------\n" ++ "" ++ (show (slots !! 6)) ++ "|" ++ (show (slots !! 7)) ++ "|" ++ (show (slots !! 8)) ++ "\n")
   if turn == 0
     then do
+      putStrLn "Player X turn"
+      putStrLn ("\n" ++ "" ++ show (slots !! 0) ++ "|" ++ show (slots !! 1) ++ "|" ++ show (slots !! 2) ++ "\n------------\n" ++ "" ++ show (slots !! 3) ++ "|" ++ show (slots !! 4) ++ "|" ++ show (slots !! 5) ++ "\n------------\n" ++ "" ++ show (slots !! 6) ++ "|" ++ show (slots !! 7) ++ "|" ++ show (slots !! 8) ++ "\n")
       pos <- getChar
-      if pos `notElem` slots --the position is already taken we call runGame again with the same board
-        then do runGame slots 0
+      getChar -- By doing it the enter was not counted as an user input
+      if notElem pos slots then do --the position is already taken we call runGame again with the same board
+        putStrLn "Opsi option taken, try again!"
+        runGame slots 0
         else runGame (newBoard slots turn pos) 1
     else do
+      putStrLn "Player O turn"
+      putStrLn ("\n" ++ "" ++ show (slots !! 0) ++ "|" ++ show (slots !! 1) ++ "|" ++ show (slots !! 2) ++ "\n------------\n" ++ "" ++ show (slots !! 3) ++ "|" ++ show (slots !! 4) ++ "|" ++ show (slots !! 5) ++ "\n------------\n" ++ "" ++ show (slots !! 6) ++ "|" ++ show (slots !! 7) ++ "|" ++ show (slots !! 8) ++ "\n")
       pos <- getChar
-      if pos `notElem` slots
-        then do runGame slots 1
+      getChar
+      if notElem pos slots then do
+        putStrLn "Opsi option taken, try again!"
+        runGame slots 1
         else runGame (newBoard slots turn pos) 0
 
 --Receives a board, a  player and a position on the board.
--- It returns a new board with the position 
+-- It returns a new board with the position
 newBoard :: Board -> Turn -> Option -> Board
-newBoard (x : xs) turn pos  -- x is the first index of the list, the "head" xs is the rest of the list 
-  | ((x == pos) && (turn == 0)) = (['X'] ++ xs)
-  | ((x == pos) && (turn == 1)) = (['O'] ++ xs)
-  | otherwise = x : (newBoard xs turn pos)
+newBoard (x : xs) turn pos -- x is the first index of the list, the "head" xs is the rest of the list
+  | (x == pos) && (turn == 0) = ['X'] ++ xs
+  | (x == pos) && (turn == 1) = ['O'] ++ xs
+  | otherwise = x : newBoard xs turn pos
 
 -- The I/O action allow us to read inputs from the user and print things the screen.
 -- Greets player and start/end game
