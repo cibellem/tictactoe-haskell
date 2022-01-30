@@ -30,7 +30,7 @@ Have Fun!
 
 
 
-### Visual Demo
+### Demo
 
 
 Any suggesctions on How I can improve the game or/and my code? Let me know. <br/> 
