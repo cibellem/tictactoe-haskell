@@ -1,8 +1,8 @@
-# TicTacToe- Haskell
-A TicTacToe Game built with Haskell
+## TicTacToe- Haskell
+:space_invader: :space_invader:A TicTacToe Game built with Haskell :space_invader: :space_invader:
 
 
-## Steps on how to run the game locally
+### Steps on how to run the game locally
 1 - The steps assume you have a compiler installed locally. If not please proceed to https://www.haskell.org/downloads/ and install the tools needed to run the script. <br/>
 2 - Clone the repository. <br/>
 3 - On your terminal navigate to the folder of the repository <br/>
@@ -13,7 +13,7 @@ A TicTacToe Game built with Haskell
 Have Fun! 
 
 
-## Cibelle's MVP
+### Cibelle's MVP
 
 1 - Neeeds to be written in Haskell <br/> 
 2 - When script starts users can choose to start or quit the game at any time <br/>
@@ -23,14 +23,14 @@ Have Fun!
 6 - User knows whose turn is it <br/>
 
 
-## Future implementations : 
+### Future implementations : 
 1 - A game setup where users can enter their name  <br/>
 2 - A score table that keeps track of winners/loosers <br/>
 3 - Refactoring. Get rid of redudand code. Make it cleaner. <br/>
 
 
 
-## Visual Demo
+### Visual Demo
 
 
 Any suggesctions on How I can improve the game or/and my code? Let me know. <br/> 
