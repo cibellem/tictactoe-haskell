@@ -11,11 +11,10 @@ Have Fun!<br/>
 
 ## Cibelle's MVP
 1 - Needs to be written in Haskell <br/> 
-2 - When the script starts users can choose to start or quit the game at any time <br/>
-3 - A visual representation of the board is displayed in the CLI <br/>
-4 - Only create a new board if the player chooses a position that was not yet taken <br/>
-5 - User is made aware of the position they are trying to choose is not available <br/>
-6 - User knows whose turn is it<br/>
+2 - A visual representation of the board is displayed in the CLI <br/>
+3 - Only create a new board if the player chooses a position that was not yet taken <br/>
+4 - User is made aware of the position they are trying to choose is not available <br/>
+5 - User knows whose turn is it<br/>
 
 ## Future implementations :
 1 - A game setup where users can enter their name <br/>
