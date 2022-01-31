@@ -22,5 +22,8 @@ Have Fun!<br/>
 3 - Refactoring. Get rid of redundant code. Make it cleaner.<br/> 
 
 ## Demo
+![gif](haskeltc.gif)
+
+## Notes
 Any suggestions on How I can improve the game or/and my code? Let me know. <br/> 
 This is my first attempting writing in Haskell. The goal of this exercise is to learn about a different Programming Language Paradigm. <br/>
