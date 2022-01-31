@@ -22,7 +22,7 @@ Have Fun!<br/>
 3 - Refactoring. Get rid of redundant code. Make it cleaner.<br/> 
 
 ## Demo
-![gif](haskeltc.gif)
+https://www.loom.com/share/f24e2b0315564f3888db03b454e530a6
 
 ## Notes
 Any suggestions on How I can improve the game or/and my code? Let me know. <br/> 
